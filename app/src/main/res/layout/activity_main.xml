@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1080dp"
+    android:layout_height="1920dp"
+    android:background="#000000">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <!-- Vùng bí mật 100x100 ở góc trên trái để mở khóa -->
+    <View
+        android:id="@+id/secret_trigger"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="top|start"
+        android:background="#00000000" />
+
+    <!-- Khung nhập pass -->
+    <LinearLayout
+        android:id="@+id/overlay_settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="48dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CÀI ĐẶT KIOSK - NHẬP PASS"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:id="@+id/et_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://website-cua-ban.com"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#88FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="textUri"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mật khẩu hiện tại"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#88FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/et_new_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Đổi mật khẩu mới (để trống nếu không đổi)"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#88FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_close"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="ĐÓNG" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="LƯU &amp; TẢI LẠI" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="THOÁT CHẾ ĐỘ KIOSK"
+            android:backgroundTint="#FF4444" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giữ góc trên-trái 5s để mở. Tự refresh 5 phút, không nháy."
+            android:textColor="#88FFFFFF"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</FrameLayout>
